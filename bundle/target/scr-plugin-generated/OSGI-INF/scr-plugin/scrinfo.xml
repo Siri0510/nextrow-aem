@@ -16,4 +16,40 @@
         <property name="sling.filter.scope" value="REQUEST" private="false"/>
         <property name="service.pid" value="com.nextrowaem.impl.filters.LoggingFilter" private="false"/>
     </scr:component>
+    <scr:component enabled="true" name="com.nextrowaem.CustomServlet">
+        <implementation class="com.nextrowaem.CustomServlet"/>
+        <service servicefactory="false">
+            <provide interface="javax.servlet.Servlet"/>
+        </service>
+        <property name="sling.servlet.paths" value="/bin/FruitsServlet" private="false"/>
+        <property name="sling.servlet.methods" value="GET" private="false"/>
+        <property name="service.pid" value="com.nextrowaem.CustomServlet" private="false"/>
+    </scr:component>
+    <scr:component enabled="true" name="com.nextrowaem.FirstServlet">
+        <implementation class="com.nextrowaem.FirstServlet"/>
+        <service servicefactory="false">
+            <provide interface="javax.servlet.Servlet"/>
+        </service>
+        <property name="sling.servlet.paths" value="/bin/StatesServlet" private="false"/>
+        <property name="sling.servlet.methods" value="GET" private="false"/>
+        <property name="service.pid" value="com.nextrowaem.FirstServlet" private="false"/>
+    </scr:component>
+    <scr:component enabled="true" name="com.nextrowaem.QueryServlet">
+        <implementation class="com.nextrowaem.QueryServlet"/>
+        <service servicefactory="false">
+            <provide interface="javax.servlet.Servlet"/>
+        </service>
+        <property name="sling.servlet.paths" value="/bin/QueryServlet" private="false"/>
+        <property name="sling.servlet.methods" value="GET" private="false"/>
+        <property name="service.pid" value="com.nextrowaem.QueryServlet" private="false"/>
+    </scr:component>
+    <scr:component enabled="true" name="com.nextrowaem.FormServlet">
+        <implementation class="com.nextrowaem.FormServlet"/>
+        <service servicefactory="false">
+            <provide interface="javax.servlet.Servlet"/>
+        </service>
+        <property name="sling.servlet.paths" value="/bin/FormServlet" private="false"/>
+        <property name="sling.servlet.methods" value="POST" private="false"/>
+        <property name="service.pid" value="com.nextrowaem.FormServlet" private="false"/>
+    </scr:component>
 </components>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Tab 1">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <firstname
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="First Name"
+                        name="./firstName"
+                        xtype="textfield"/>
+                    <lastname
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Last Name"
+                        name="./lastName"
+                        xtype="textfield"/>
+                    <email
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Email"
+                        name="./email"
+                        xtype="textfield"/>
+                   <position
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Text Position"
+                        name="./groups"
+                        type="select"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                        	<Masters
+                            jcr:primaryType="nt:unstructured"
+                            text="Masters"
+                            value="/content/dam/degrees/download (2).jpg"/>
+                        	<Bachelors
+                            jcr:primaryType="nt:unstructured"
+                            text="Bachelors"
+                            value="/content/dam/degrees/high-school-degree.png"/>
+                            <High-School
+                            jcr:primaryType="nt:unstructured"
+                            text="High School"
+                            value="/content/dam/degrees/degreesspec-ed.jpg"/>		
+                        </options>
+                    </position>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>

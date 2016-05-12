@@ -1,0 +1,17 @@
+.menu{
+     width:500px; 
+     overflow:hidden; 
+     margin:10px auto; 
+     color:white; 
+     background:grey; 
+     padding:10px
+    }
+.section-one{
+    width:100%;
+    height: 30px;
+    transition:height 0.2s ease-out;
+}
+.section-one :target{ 
+     height:250px; 
+     width:97%;
+}

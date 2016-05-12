@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    xtype="dialog">
+    <items
+        jcr:primaryType="nt:unstructured"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <first
+                jcr:primaryType="cq:Widget"
+                title="First"
+                xtype="panel">
+                <items jcr:primaryType="cq:WidgetCollection">
+                   <position
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Text Position"
+                        name="./position"
+                        type="select"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                        	<layout-one
+                            jcr:primaryType="nt:unstructured"
+                            text="layout-one"
+                            value="layout-one"/>
+                        	<layout-two
+                            jcr:primaryType="nt:unstructured"
+                            text="layout-two"
+                            value="layout-two"/>
+                            <layout-three
+                            jcr:primaryType="nt:unstructured"
+                            text="layout-three"
+                            value="layout-three"/>		
+                        </options>
+                        <listeners
+                        	jcr:primaryType = "nt:unstructured"
+                        	
+                        	selectionchanged="function(obj, value, isChecked) {var tabs = obj.findParentByType('tabpanel');console.log(tabs);console.log(value);if(value == 'layout-one') {tabs.unhideTabStripItem(1);tabs.hideTabStripItem(2);}else if(value == 'layout-two') { tabs.hideTabStripItem(1);tabs.unhideTabStripItem(2);}  else { tabs.hideTabStripItem(1);tabs.hideTabStripItem(2);tabs.hideTabStripItem(3);}"/>
+                    </position>
+                </items>
+            </first>
+            <layout-one
+                jcr:primaryType="cq:Widget"
+                title="layout-one"
+                xtype="panel">
+                <items jcr:primaryType="cq:WidgetCollection">
+                   <!--<title2
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Title"
+                        name="./second"
+                        xtype="textfield"/>
+                    <textarea2
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Description"
+                        name="./area2"
+                        xtype="textarea"/>
+                    <path1
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Path"
+                        name="./path"
+                        xtype="pathfield"/>-->
+                    <position
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Select State"
+                        name="./states"
+                        type="select"
+                        options="/bin/StatesServlet"
+                        xtype="selection">
+                    </position>
+                    <position1
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Select Fruits"
+                        name="./fruits"
+                        type="select"
+                        options="/bin/FruitsServlet"
+                        xtype="selection">
+                   </position1>
+                </items>
+            </layout-one>
+            <layout-two
+                jcr:primaryType="cq:Widget"
+                title="layout-two"
+                xtype="panel">
+                <items jcr:primaryType="cq:WidgetCollection">
+                  <!--  <title3
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Title"
+                        name="./third"
+                        xtype="textfield"/>
+                   <textarea3
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Description"
+                        name="./area3"
+                        xtype="textarea"/>
+                   <path2
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Path"
+                        name="./path"
+                        xtype="pathfield"/>-->
+                   <position2
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Select State"
+                        name="./states1"
+                        type="select"
+                        options="/bin/StatesServlet"
+                        xtype="selection">
+                   </position2>
+                   <position3
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Select Fruits"
+                        name="./fruits1"
+                        type="select"
+                        options="/bin/FruitsServlet"
+                        xtype="selection">
+                   </position3>
+                </items>
+            </layout-two> 
+              <layout-three
+                jcr:primaryType="cq:Widget"
+                title="layout-two"
+                xtype="panel">
+                <items jcr:primaryType="cq:WidgetCollection">
+                  <!-- <title3
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Title"
+                        name="./third"
+                        xtype="textfield"/>
+                   <textarea3
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Description"
+                        name="./area3"
+                        xtype="textarea"/>
+                   <path2
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Path"
+                        name="./path"
+                        xtype="pathfield"/>-->
+                   <position4
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Select State"
+                        name="./states2"
+                        type="select"
+                        options="/bin/StatesServlet"
+                        xtype="selection">
+                   </position4>
+                   <position5
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Select Fruits"
+                        name="./fruits2"
+                        type="select"
+                        options="/bin/FruitsServlet"
+                        xtype="selection">
+                   </position5>
+                </items>
+            </layout-three> 
+        </items>
+    </items>
+</jcr:root>

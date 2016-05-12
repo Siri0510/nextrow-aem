@@ -1,0 +1,12 @@
+.titlecard-wrap{
+	margin: 10px;
+	border: 2px solid;
+    padding: 20px;
+    width: 500px;
+    background-color: black;
+    color: white;
+}
+.tc-img{
+    width: 100%;
+
+}

@@ -16,4 +16,40 @@
         <property name="sling.filter.scope" value="REQUEST"/>
         <property name="service.pid" value="com.nextrowaem.impl.filters.LoggingFilter"/>
     </scr:component>
+    <scr:component enabled="true" name="com.nextrowaem.CustomServlet">
+        <implementation class="com.nextrowaem.CustomServlet"/>
+        <service servicefactory="false">
+            <provide interface="javax.servlet.Servlet"/>
+        </service>
+        <property name="sling.servlet.paths" value="/bin/FruitsServlet"/>
+        <property name="sling.servlet.methods" value="GET"/>
+        <property name="service.pid" value="com.nextrowaem.CustomServlet"/>
+    </scr:component>
+    <scr:component enabled="true" name="com.nextrowaem.FirstServlet">
+        <implementation class="com.nextrowaem.FirstServlet"/>
+        <service servicefactory="false">
+            <provide interface="javax.servlet.Servlet"/>
+        </service>
+        <property name="sling.servlet.paths" value="/bin/StatesServlet"/>
+        <property name="sling.servlet.methods" value="GET"/>
+        <property name="service.pid" value="com.nextrowaem.FirstServlet"/>
+    </scr:component>
+    <scr:component enabled="true" name="com.nextrowaem.QueryServlet">
+        <implementation class="com.nextrowaem.QueryServlet"/>
+        <service servicefactory="false">
+            <provide interface="javax.servlet.Servlet"/>
+        </service>
+        <property name="sling.servlet.paths" value="/bin/QueryServlet"/>
+        <property name="sling.servlet.methods" value="GET"/>
+        <property name="service.pid" value="com.nextrowaem.QueryServlet"/>
+    </scr:component>
+    <scr:component enabled="true" name="com.nextrowaem.FormServlet">
+        <implementation class="com.nextrowaem.FormServlet"/>
+        <service servicefactory="false">
+            <provide interface="javax.servlet.Servlet"/>
+        </service>
+        <property name="sling.servlet.paths" value="/bin/FormServlet"/>
+        <property name="sling.servlet.methods" value="POST"/>
+        <property name="service.pid" value="com.nextrowaem.FormServlet"/>
+    </scr:component>
 </components>
