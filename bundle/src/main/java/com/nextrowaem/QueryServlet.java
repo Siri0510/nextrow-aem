@@ -23,8 +23,12 @@ import com.day.cq.search.QueryBuilder;
 import com.day.cq.search.result.Hit;
 
 @SuppressWarnings("serial")
-@SlingServlet(generateService = true, generateComponent = true, metatype = true, methods = { "GET" }, paths = {
-		"/bin/QueryServlet" })
+@SlingServlet(generateService = true, 
+			  generateComponent = true, 
+			  metatype = true, 
+			  methods = { "GET" }, 
+			  paths = {"/bin/QueryServlet" })
+
 public class QueryServlet extends SlingSafeMethodsServlet {
 	private Logger log = LoggerFactory.getLogger(QueryServlet.class);
 	ResourceResolver resourceResolver;
@@ -54,9 +58,9 @@ public class QueryServlet extends SlingSafeMethodsServlet {
 			ValueMap props;
 			for (Hit hit : query.getResult().getHits()) {
 
-				individualNode = resourceResolver.getResource(hit.getPath()).adaptTo(Node.class);
-				resultTitle = individualNode.getProperty("jcr:title").getString();
-				resultTemplate = individualNode.getProperty("cq:template").getString();
+				props = resourceResolver.getResource(hit.getPath()).adaptTo(ValueMap.class);
+				resultTitle = props.get("jcr:title").toString();
+				resultTemplate = props.get("cq:template").toString();
 				tidyJSONWriter.object();
 				tidyJSONWriter.key("title");
 				tidyJSONWriter.value(resultTitle);

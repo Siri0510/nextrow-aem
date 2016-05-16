@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1463170770471
+Bnd-LastModified: 1463427732323
 Build-Jdk: 1.7.0_80
 Built-By: snell
 Bundle-Description: Maven Multimodule project for Nextrow AEM.
