@@ -1,7 +1,7 @@
 package com.nextrowaem;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+//import java.io.PrintWriter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import javax.jcr.Node;
@@ -11,7 +11,7 @@ import javax.servlet.ServletException;
 import org.apache.felix.scr.annotations.sling.SlingServlet;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
-import org.apache.sling.api.adapter.Adaptable;
+//import org.apache.sling.api.adapter.Adaptable;
 import org.apache.sling.api.resource.ResourceResolver;
 //import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
 import org.apache.sling.api.servlets.SlingAllMethodsServlet;
@@ -62,14 +62,7 @@ public class FormServlet extends SlingAllMethodsServlet{
 			studentNode.setProperty("lastName", lastName);
 			studentNode.setProperty("email", email);
 			studentNode.setProperty("groups", education);
-			session.save();
-			
-			
-			
-			
-			
-			
-			
+			session.save();	
 			
 		//	sling api vs jcr api
 			
@@ -95,7 +88,7 @@ public class FormServlet extends SlingAllMethodsServlet{
 			//out.print(state.get(i));
 			//}
 			//out.print(text);
-			String redirect = "/content/geometrixx/en/toolbar.html";
+			//String redirect = "/content/geometrixx/en/toolbar.html";
 			response.sendRedirect("/content/boot/"+firstName+".html");
 			
 		}

@@ -1,4 +1,4 @@
-package com.nextrowaem;
+/*package com.nextrowaem;
 
 import java.io.IOException;
 import java.util.Calendar;
@@ -7,7 +7,6 @@ import java.util.Map;
 
 import javax.jcr.Node;
 import javax.jcr.Session;
-import javax.jcr.Value;
 import javax.jcr.ValueFactory;
 
 import org.apache.felix.scr.annotations.sling.SlingServlet;
@@ -32,30 +31,30 @@ import com.day.cq.search.result.Hit;
 			  methods = { "GET" }, 
 			  paths = {"/bin/QueryServlet" })
 
-public class QueryServlet extends SlingSafeMethodsServlet {
+/*public class QueryServlet extends SlingSafeMethodsServlet {
 	private Logger log = LoggerFactory.getLogger(QueryServlet.class);
 	ResourceResolver resourceResolver;
-	ValueFactory valueFactory;
 
 	protected void doGet(SlingHttpServletRequest request, SlingHttpServletResponse response) throws IOException {
 		log.info("/////inside the queryServelet");
 		try {
 			log.info("@@@@@@@@@@@@@@@request  : " + request);
 			resourceResolver = request.getResourceResolver();
-			Session session = resourceResolver.adaptTo(Session.class);
+			Session session = request.getResourceResolver().adaptTo(Session.class);
+		    ValueFactory valueFactory = null;
 			Calendar calendar = Calendar.getInstance();
-		    calendar.add(Calendar.DATE, -7);
-		    String expiredDateUpperBound = session.getValueFactory().createValue(calendar).toString();
-//     		Calendar calendar = Calendar.getInstance();
-//    		calendar.add(Calendar.DATE, -7);
-//			log.info("^^^calenderdate" +Calendar.DATE);
-//			Value x = valueFactory.createValue(calendar);
-//			log.info("^^^calenderdatevalue"+x);
+			int deletion_days = 7;
+			calendar.add(Calendar.DATE, deletion_days);
+			log.info("^^^calender" +calendar);
+			log.info("^^^calenderdate" +Calendar.DATE);
+			//String expiredUpperBound = session.valueFactory.createValue(calendar).toString();
 			Map<String, String> map = new HashMap<String, String>();
 			map.put("path", "/content/boot"); 
 			map.put("type", "cq:PageContent");
-			map.put("daterange.property", "cq:lastModified");
-			map.put("daterange.lowerBound", expiredDateUpperBound);
+			map.put("daterange.property", "date");
+			map.put("daterange.lowerBound", "-20d");
+			map.put("daterange.upperBound", "valueFactory.createValue(calendar)");
+			map.put("daterange.p.or","true");
 			map.put("orderby", "@jcr:content/cq:lastModified");
 			map.put("orderby.sort", "desc");
 			map.put("p.limit", "-1");
@@ -66,22 +65,23 @@ public class QueryServlet extends SlingSafeMethodsServlet {
 
 			TidyJSONWriter tidyJSONWriter = new TidyJSONWriter(response.getWriter());
 
-			String resultTitle = null, resultTemplate = null, resultDate = null;
+			String resultTitle = null, resultTemplate = null;
 			tidyJSONWriter.array();
 			ValueMap props;
 			for (Hit hit : query.getResult().getHits()) {
+				
+				  String Pagepath = "/content/geometrixx/en"; //This would be your page path
+				  Resource r = resourceResolver.getResource(Pagepath+"/"+JcrConstants.JCR_CONTENT);
+				  Node n = r.adaptTo(Node.class);
 
 				props = resourceResolver.getResource(hit.getPath()).adaptTo(ValueMap.class);
 				resultTitle = props.get("jcr:title").toString();
 				resultTemplate = props.get("cq:template").toString();
-				resultDate = props.get("cq:lastModified").toString();
 				tidyJSONWriter.object();
 				tidyJSONWriter.key("title");
 				tidyJSONWriter.value(resultTitle);
 				tidyJSONWriter.key("template");
 				tidyJSONWriter.value(resultTemplate);
-				tidyJSONWriter.key("Date");
-				tidyJSONWriter.value(resultDate);
 				tidyJSONWriter.endObject();
 			}
 			tidyJSONWriter.endArray();
@@ -92,4 +92,4 @@ public class QueryServlet extends SlingSafeMethodsServlet {
 			response.getWriter().close();
 		}
 	}
-}
+}*/

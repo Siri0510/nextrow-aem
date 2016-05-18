@@ -18,8 +18,14 @@
     <artifactId>nextrow-aem-bundle</artifactId>
     <packaging>bundle</packaging>
     <name>Nextrow AEM Bundle</name>
+    
 
     <dependencies>
+    	<dependency>
+	   		<groupId>net.tanesha.recaptcha4j</groupId>
+	   		<artifactId>recaptcha4j</artifactId>
+	   		<version>0.0.7</version>
+   		</dependency>
     	<dependency>
 			<groupId>com.day.cq</groupId>
 			<artifactId>cq-search</artifactId>
