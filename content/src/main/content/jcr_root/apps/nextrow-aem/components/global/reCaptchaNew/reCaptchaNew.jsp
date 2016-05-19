@@ -1,6 +1,5 @@
 <%@include file="/libs/foundation/global.jsp"%>
-<%@ page import="net.tanesha.recaptcha.ReCaptcha" %>
-<%@ page import="net.tanesha.recaptcha.*" %>
+<%@page import="net.tanesha.recaptcha.*;" %>
 
 <%
     //Getting remote ip addres to validate catpcha 
@@ -12,11 +11,11 @@
  %>
     <input type="hidden" value="<%=ipAddress%>" id="remoteIPAdderess" >
     <input type="hidden" value="<%=currentNode.getPath()%>" id="curNodePath" >
-    <% ReCaptcha reCaptcha = ReCaptchaFactory.newReCaptcha("<Public Key>", "<Private Key>", false); %>
+    <% ReCaptcha reCaptcha = ReCaptchaFactory.newReCaptcha("6LeHaSATAAAAACXsz7QWJd8Bq9OMUze93DLifBwI", "6LeHaSATAAAAAPTHleCmEnQJh_zQ5li9y8FLXxs7", false); %>
     
-    <h1 id="page-title" class="title">Google Captch Integration in CQ</h1>
+    <h1 id="page-title" class="title">Google reCaptcha</h1>
     <form accept-charset="UTF-8" id="testCaptcha" method="post" action="" class="contact-press-form ajax-form">
-        <div id="gooleCaptcha">
+        <div id= "gooleCaptcha">
             <input type="hidden" value="form-U5ArplaaF5MKYCMnyZkQDZfvXEy7bO7JLc5e6VCKses"  name="form_build_id"> 
             <input type="hidden" value="apollocontactpress_contact_form" name="form_id">
     
@@ -70,4 +69,4 @@ $(function() {
         }
   });  
 });
-    </script>
+</script>

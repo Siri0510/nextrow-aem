@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Dialog"
     xtype="dialog">
     <items
@@ -21,11 +21,11 @@
                         fieldLabel="Description"
                         name="./area1"
                         xtype="textarea"/>
-                    <ColorList1 
-                     		jcr:primaryType="cq:Widget" 
-                       	 	fieldLabel="Color" 
-                        	xtype="colorlist" 
-                        	name="./color1"/>
+                    <ColorList1
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Color"
+                        name="./color1"
+                        xtype="colorlist"/>
                 </items>
             </first>
             <second
@@ -42,12 +42,12 @@
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Description"
                         name="./area2"
-                        xtype="textarea"/>	
-                     <ColorList2 
-                     		jcr:primaryType="cq:Widget" 
-                       	 	fieldLabel="Color" 
-                        	xtype="colorlist" 
-                        	name="./color2"/>    
+                        xtype="textarea"/>
+                    <ColorList2
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Color"
+                        name="./color2"
+                        xtype="colorlist"/>
                 </items>
             </second>
             <third
@@ -60,16 +60,16 @@
                         fieldLabel="Name"
                         name="./third"
                         xtype="textfield"/>
-                   <textarea3
+                    <textarea3
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Description"
                         name="./area3"
                         xtype="textarea"/>
-                   <ColorList3 
-                     	jcr:primaryType="cq:Widget" 
-                       	fieldLabel="Color" 
-                        xtype="colorlist" 
-                        name="./color3"/> 	
+                    <ColorList3
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Color"
+                        name="./color3"
+                        xtype="colorlist"/>
                 </items>
             </third>
             <fourth
@@ -82,16 +82,16 @@
                         fieldLabel="Name"
                         name="./fourth"
                         xtype="textfield"/>
-                   <textarea4
+                    <textarea4
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Description"
                         name="./area4"
                         xtype="textarea"/>
-                   <ColorList4 
-                     	jcr:primaryType="cq:Widget" 
-                       	fieldLabel="Color" 
-                        xtype="colorlist" 
-                        name="./color4"/> 	
+                    <ColorList4
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Color"
+                        name="./color4"
+                        xtype="colorlist"/>
                 </items>
             </fourth>
         </items>
