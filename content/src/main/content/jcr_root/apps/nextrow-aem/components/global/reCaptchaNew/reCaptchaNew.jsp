@@ -2,7 +2,7 @@
 <%@page import="net.tanesha.recaptcha.*;" %>
 
 <%
-    //Getting remote ip addres to validate catpcha 
+    //Getting remote ip address to validate catpcha 
     String ipAddress = request.getHeader("X-FORWARDED-FOR");  
     if (ipAddress == null) {  
    ipAddress = request.getRemoteAddr();  
