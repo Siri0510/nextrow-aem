@@ -33,14 +33,39 @@
                         </options>
                         <listeners
                             jcr:primaryType="nt:unstructured"
-                            selectionchanged="function(obj, value, isChecked) {var tabs = obj.findParentByType('tabpanel');console.log(tabs);console.log(value);if(value == 'layout-one') {tabs.unhideTabStripItem(1);tabs.hideTabStripItem(2);}else if(value == 'layout-two') { tabs.hideTabStripItem(1);tabs.unhideTabStripItem(2);}  else { tabs.hideTabStripItem(1);tabs.hideTabStripItem(2);tabs.hideTabStripItem(3);}"/>
+                            selectionchanged=  "function(obj, value, isChecked) {
+                            				if(obj!=null){
+											    var tabs = obj.findParentByType('tabpanel');
+											    console.log(tabs);
+											    console.log(value);
+											    if(value == 'layout-one') {
+											        tabs.unhideTabStripItem('tab1');
+											        tabs.hideTabStripItem('tab2');
+											      	tabs.hideTabStripItem('tab3');
+											    } else if(value == 'layout-two') {
+											        tabs.hideTabStripItem('tab1');
+											        tabs.unhideTabStripItem('tab2');
+											        tabs.hideTabStripItem('tab3');
+											    } else if(value == 'layout-three') {
+											        tabs.hideTabStripItem('tab1');
+											        tabs.hideTabStripItem('tab2');
+											        tabs.unhideTabStripItem('tab3');
+											    }
+											    else(value == null){
+											    tabs.hideTabStripItem('tab1');
+											    tabs.hideTabStripItem('tab2');
+											    tabs.hideTabStripItem('tab3');
+											    }
+											}
+												"/>
                     </position>
                 </items>
             </first>
             <layout-one
                 jcr:primaryType="cq:Widget"
                 title="layout-one"
-                xtype="panel">
+                itemId="tab1"
+                xtype="tabpanel">
                 <items jcr:primaryType="cq:WidgetCollection">
                     <position
                         jcr:primaryType="cq:Widget"
@@ -61,7 +86,8 @@
             <layout-two
                 jcr:primaryType="cq:Widget"
                 title="layout-two"
-                xtype="panel">
+                itemId="tab2"
+                xtype="tabpanel">
                 <items jcr:primaryType="cq:WidgetCollection">
                     <position2
                         jcr:primaryType="cq:Widget"
@@ -82,7 +108,8 @@
             <layout-three
                 jcr:primaryType="cq:Widget"
                 title="layout-two"
-                xtype="panel">
+                itemId="tab3"
+                xtype="tabpanel">
                 <items jcr:primaryType="cq:WidgetCollection">
                     <position4
                         jcr:primaryType="cq:Widget"

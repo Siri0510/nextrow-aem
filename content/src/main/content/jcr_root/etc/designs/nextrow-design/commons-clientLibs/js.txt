@@ -2,3 +2,4 @@
 
 jquery-ui.js
 accordion.js
+loadimage.js

@@ -94,13 +94,15 @@ try
     Email email = new SimpleEmail();
           
     //Set the mail values
-    String emailToRecipients = "tblue@nomailserver.com"; 
-    String emailCcRecipients = "wblue@nomailserver.com"; 
+    String emailToRecipients = "nellutlasirisha@gmail.com"; 
+    String emailCcRecipients = "nellutlasirisha@gmail.com";
+    
+    log.info("###entered");
       
     email.addTo(emailToRecipients);
     email.addCc(emailCcRecipients);
     email.setSubject("AEM Custom Step");
-    email.setFrom("scottm@adobe.com"); 
+    email.setFrom("nellutlasirisha@gmail.com"); 
     email.setMsg("This message is to inform you that the CQ content has been deleted");
       
     //Inject a MessageGateway Service and send the message

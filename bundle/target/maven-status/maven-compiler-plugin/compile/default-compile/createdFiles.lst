@@ -1,7 +1,7 @@
-com\nextrowaem\reCaptchaService.class
 com\nextrowaem\impl\filters\LoggingFilter.class
 com\nextrowaem\QueryServlet.class
 com\nextrowaem\JSONObject.class
+com\nextrowaem\ReCaptchaService.class
 com\nextrowaem\FirstServlet.class
 com\nextrowaem\package-info.class
 com\nextrowaem\impl\HelloServiceImpl.class

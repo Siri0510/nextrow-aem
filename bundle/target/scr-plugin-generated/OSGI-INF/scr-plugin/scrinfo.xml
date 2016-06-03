@@ -13,7 +13,7 @@
     <scr:component enabled="true" immediate="true" name="com.nextrowaem.ReCaptchaConfigImpl" activate="activate">
         <implementation class="com.nextrowaem.ReCaptchaConfigImpl"/>
         <service servicefactory="false">
-            <provide interface="com.nextrowaem.reCaptchaService"/>
+            <provide interface="com.nextrowaem.ReCaptchaService"/>
         </service>
         <property name="recaptchaPublicKey" private="false"/>
         <property name="recaptchaPrivateKey" private="false"/>

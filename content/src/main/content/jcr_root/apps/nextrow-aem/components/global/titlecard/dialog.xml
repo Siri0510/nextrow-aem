@@ -16,6 +16,24 @@
                         fieldLabel="enter value"
                         name="./title1"
                         xtype="textfield"/>
+                    <checkbox
+					    jcr:primaryType="cq:Widget"
+					    defaultValue="{Boolean}false"
+					    fieldDescription="this is a checkbox"
+					    fieldLabel="enable something"
+					    name="./checkbox"
+					    type="checkbox"
+					    xtype="selection">
+    				<listeners 
+    					jcr:primaryType="nt:unstructured" 
+    					selectionchanged="function(comp, val, isChecked){var dlg = comp.findParentByType('dialog');var textfield = dlg.getField('./textfield');isChecked ? textfield.enable() : textfield.disable(); }"/>
+					</checkbox>
+					<textfield
+					    jcr:primaryType="cq:Widget"
+					    fieldDescription= "this is a textfield"
+					    fieldLabel="textfield..."
+					    name="./textfield"
+					    xtype="textfield"/>
                     <path
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Path"

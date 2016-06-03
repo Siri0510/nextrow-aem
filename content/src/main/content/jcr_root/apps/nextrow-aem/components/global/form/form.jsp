@@ -1,19 +1,15 @@
-<%--
-  student enrollment form component.
-  student enrollment form
---%><%
-%><%@include file="/libs/foundation/global.jsp"%><%
+<%@include file="/libs/foundation/global.jsp"%><%
 %><%@page session="false" %><%
 %><%
-%><%@ page import="com.nextrowaem.reCaptchaService" %>
+%><%@ page import="com.nextrowaem.ReCaptchaService" %>
 
 
-<%reCaptchaService service = sling.getService(reCaptchaService.class);
+<% ReCaptchaService service = sling.getService(ReCaptchaService.class);
+   String publickey = service.getRecaptchaPublicKey();
+   String privatekey = service.getRecaptchaPrivateKey();
+%>
 
-<c:set var="reCaptchaKeys" value="<%= service %>" />
-<c:set var="reCaptchaMethod" value="${reCaptchaKeys.keyList}" />
-<c:set var="reCaptchaPublicKey" value="${reCaptchaMethod.recaptchaPublicKey}" />
-<c:set var="reCaptchaPrivateKey" value="${reCaptchaMethod.recaptchaPrivateKey}" />
+
  
 <script src='https://www.google.com/recaptcha/api.js'></script>
 <cq:includeClientLib categories="apps.nextrowaem"/>
@@ -38,26 +34,9 @@
   </select><br><br>
   E-mail   <input type="text" id="email" name="email" placeholder="*Email ID" required /><br><br><br>
   <div class="formElement">
-  	<%--
-          ReCaptcha c = ReCaptchaFactory.newReCaptcha("6LeHaSATAAAAACXsz7QWJd8Bq9OMUze93DLifBwI", "6LeHaSATAAAAAPTHleCmEnQJh_zQ5li9y8FLXxs7", false);
-          out.print(c.createRecaptchaHtml(null, null));
-        --%>
-        <%--
-        String remoteAddr = request.getRemoteAddr();
-        ReCaptchaImpl reCaptcha = new ReCaptchaImpl();
-        reCaptcha.setPrivateKey("your_private_key");
-
-        String challenge = request.getParameter("recaptcha_challenge_field");
-        String uresponse = request.getParameter("recaptcha_response_field");
-        ReCaptchaResponse reCaptchaResponse = reCaptcha.checkAnswer(remoteAddr, challenge, uresponse);
-
-        if (reCaptchaResponse.isValid()) {
-          out.print("Answer was entered correctly!");
-        } else {
-          out.print("Answer is wrong");
-        }
-      --%>
-  	<div class="g-recaptcha" data-sitekey="6LfFFiETAAAAACt5Kk351rnn-VXyui_c3B3vyhxB"></div>
+  	
+  	<div class="g-recaptcha" data-sitekey="<%= publickey %>"></div>
+  	<div class="g-recaptcha" data-sitekey="<%= privatekey %>"></div>
   </div>
   <input type="submit" value="Submit">
   <input type="reset" value="Reset">
