@@ -23,73 +23,90 @@
                             jcr:primaryType="cq:WidgetCollection">
                             <option1
                                 jcr:primaryType="nt:unstructured"
-                                text="Yes"
-                                value="yes" />
+                                text="layout-one"
+                                value="layout-one" />
                             <option2
                                 jcr:primaryType="nt:unstructured"
-                                text="No"
-                                value="no" />
+                                text="layout-two"
+                                value="layout-two" />
                             <option3
                                 jcr:primaryType="nt:unstructured"
-                                text="Maybe"
-                                value="maybe" />
-                            <option4
-                                jcr:primaryType="nt:unstructured"
-                                text="Perfect"
-                                value="perfect" />
+                                text="layout-three"
+                                value="layout-three" />
                         </options>
                         <listeners
                             jcr:primaryType="nt:unstructured"
                             loadcontent="function(field){var d = field.findParentByType('tabpanel'); d.hideTabStripItem('tab2');            d.hideTabStripItem('tab3');           d.hideTabStripItem('tab4');}"
-                            selectionchanged="function( field,value, isChecked ){if (field !=null){var d = field.findParentByType('tabpanel');console.log(d); console.log(value);                if (value == 'no'){            d.hideTabStripItem('tab2');            d.hideTabStripItem('tab3');           d.hideTabStripItem('tab4');          }else if(value == 'yes'){            d.unhideTabStripItem('tab2');            d.hideTabStripItem('tab3');           d.hideTabStripItem('tab4');          }else if(value == 'maybe'){          d.hideTabStripItem('tab2');           d.unhideTabStripItem('tab3');          d.hideTabStripItem('tab4');          }else{          d.hideTabStripItem('tab2');           d.hideTabStripItem('tab3');          d.unhideTabStripItem('tab4');          }         }         }" />
+                            selectionchanged="function( field,value, isChecked ){if (field !=null){var d = field.findParentByType('tabpanel');console.log(d); console.log(value); if(value == 'layout-one'){            d.unhideTabStripItem('tab2');            d.hideTabStripItem('tab3');           d.hideTabStripItem('tab4');          }else if(value == 'layout-two'){          d.hideTabStripItem('tab2');           d.unhideTabStripItem('tab3');          d.hideTabStripItem('tab4');          }else{          d.hideTabStripItem('tab2');           d.hideTabStripItem('tab3');          d.unhideTabStripItem('tab4');          }         }         }" />
                     </select>
                 </items>
             </tab>
-            <tab2
-                jcr:primaryType="cq:Panel"
-                title="tab2"
+             <layout-one
+                jcr:primaryType="cq:Widget"
+                title="layout-one"
                 itemId="tab2"
                 xtype="panel">
-                <items
-                    jcr:primaryType="cq:Widget">
-                    <textfield
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <position
                         jcr:primaryType="cq:Widget"
-                        fieldDescription="this is a textfield"
-                        fieldLabel="textfield..."
-                        name="./textfield"
-                        xtype="textfield" />
+                        fieldLabel="Select State"
+                        name="./states"
+                        options="/bin/StatesServlet"
+                        type="select"
+                        xtype="selection"/>
+                    <position1
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Select Fruits"
+                        name="./fruits"
+                        options="/bin/FruitsServlet"
+                        type="select"
+                        xtype="selection"/>
                 </items>
-            </tab2>
-            <tab3
-                jcr:primaryType="cq:Panel"
-                title="tab3"
+            </layout-one>
+            <layout-two
+                jcr:primaryType="cq:Widget"
+                title="layout-two"
                 itemId="tab3"
                 xtype="panel">
-                <items
-                    jcr:primaryType="cq:Widget">
-                    <textfield
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <position2
                         jcr:primaryType="cq:Widget"
-                        fieldDescription="this is a textfield"
-                        fieldLabel="textfield..."
-                        name="./textfield"
-                        xtype="textfield" />
+                        fieldLabel="Select State"
+                        name="./states1"
+                        options="/bin/StatesServlet"
+                        type="select"
+                        xtype="selection"/>
+                    <position3
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Select Fruits"
+                        name="./fruits1"
+                        options="/bin/FruitsServlet"
+                        type="select"
+                        xtype="selection"/>
                 </items>
-            </tab3>
-            <tab4
-                jcr:primaryType="cq:Panel"
-                title="tab4"
+            </layout-two>
+            <layout-three
+                jcr:primaryType="cq:Widget"
+                title="layout-two"
                 itemId="tab4"
                 xtype="panel">
-                <items
-                    jcr:primaryType="cq:Widget">
-                    <textfield
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <position4
                         jcr:primaryType="cq:Widget"
-                        fieldDescription="this is a textfield"
-                        fieldLabel="textfield..."
-                        name="./textfield"
-                        xtype="textfield" />
+                        fieldLabel="Select State"
+                        name="./states2"
+                        options="/bin/StatesServlet"
+                        type="select"
+                        xtype="selection"/>
+                    <position5
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Select Fruits"
+                        name="./fruits2"
+                        options="/bin/FruitsServlet"
+                        type="select"
+                        xtype="selection"/>
                 </items>
-            </tab4>
+            </layout-three>
             <tab5
                 jcr:primaryType="cq:Panel"
                 title="tab5"
